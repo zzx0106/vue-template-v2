@@ -1,2 +1,5 @@
 dist
 src/libs/*
+tests/*
+tests
+config.js

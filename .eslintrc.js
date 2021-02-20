@@ -1,5 +1,6 @@
 module.exports = {
   root: true,
+
   env: {
     browser: true,
     commonjs: true,
@@ -8,20 +9,26 @@ module.exports = {
     worker: true,
     jquery: true,
   },
-  extends: ['plugin:vue/essential'],
   parserOptions: {
-    // parser: 'babel-eslint', // 使用vue-eslint-plugin使用babel-eslint解析器
-    parser: '@typescript-eslint/parser', // 同上，不过这个兼容可选链操作
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: 2018,
     sourceType: 'module',
   },
-  overrides: [
-    {
-      files: ['**/__tests__/*.{j,t}s?(x)'],
-      env: {
-        jest: true,
-      },
-    },
-  ],
+  // ---------
+  parser: 'vue-eslint-parser',
+  extends: ['plugin:vue/recommended'],
+  // overrides: [
+  //   {
+  //     files: ['*.ts'],
+  //     plugins: ['@typescript-eslint'],
+  //     parserOptions: {
+  //       parser: '@typescript-eslint/parser',
+  //       ecmaVersion: 2018,
+  //       sourceType: 'module',
+  //     },
+  //   },
+  // ],
+
   rules: {
     // eslint文档 https://eslint.bootcss.com/docs/rules/
     // 关闭console告警
@@ -95,7 +102,7 @@ module.exports = {
     //   },
     // ],
     // {{}}里面不用空格
-    'vue/mustache-interpolation-spacing': ['off'],
+    'vue/mustache-interpolation-spacing': ['error'],
     'vue/singleline-html-element-content-newline': ['off'],
     'vue/max-attributes-per-line': [
       'error',
@@ -114,5 +121,11 @@ module.exports = {
     'vue/attributes-order': ['off'], // 关闭标签属性顺序提示
     'vue/component-name-in-template-casing': ['off'],
     'vue/no-unused-components': ['off'],
+    // ts 模块 --------------------- https://github.com/typescript-eslint/typescript-eslint/tree/v2.34.0/packages/eslint-plugin/docs/rules
+    // 未使用的参数
+    '@typescript-eslint/no-unused-vars': ['off'],
+    // 返回值没必要，比如生命周期就没必要加void
+    '@typescript-eslint/explicit-function-return-type': ['off'],
+    '@typescript-eslint/camelcase': ['off'],
   },
 };
