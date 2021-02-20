@@ -1,8 +1,7 @@
-# vue 模板
-
+# vue 模板 v2模板描述
 ### 该模板为参考模板，内容比较多，不建议直接用于正式环境，按需求摘取符合自己项目所需要的功能
 
-vue 全家桶、pwa、预渲染+SEO 优化、sentry 错误监控、vw vh 移动端适配+兼容、权限、webpack 优化
+vue 全家桶、pwa、预渲染+SEO 优化、sentry 错误监控、vw vh 移动端适配+兼容、权限、webpack 优化、vscode设置优化、eslint配置、tsconfig配置、项目开发风格统一化、优化各种工具类、添加可选链功能、添加typings配置 等等。
 
 ```
 安装依赖
